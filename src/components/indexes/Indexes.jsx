@@ -108,8 +108,6 @@ export const Indexes = () => {
         async () => {
             const data = await request(daiContract);
             setGroups(data);
-            console.log('data', data);
-
         },
         [request]
     )
