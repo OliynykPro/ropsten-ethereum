@@ -1,38 +1,236 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #F8F8FA;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  padding-bottom: 100px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  width: 100%;
+}
+
+h1 {
+  font-size: 54px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  line-height: 112.4%;
+  font-family: 'Playfair Display', serif;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: left;
+  font-weight: 600;
+  line-height: 112%;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+p.price {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+a.button {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 7px 21px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: 1s ease all;
+  border: 1px solid #000000;
+}
+
+a.button:hover {
+  color: #ffffff;
+  background-color: black;
+} 
+
+div.capitalization {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.capitalization span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+div.capitalization span.green {
+  color: #03CEA4;
+}
+
+div.capitalization span.red {
+  color: #e74c3c;
+}
+
+/* LOADING */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.loading p {
   text-align: center;
 }
+/* END OF LOADING */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* INDENTS */
+.mt-40 {
+  margin-top: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.m-tb0-lr10 {
+  margin: 0 10px;
+}
+/* END OF INDENTS */
+
+/* GRID STYLES */
+.oliynyk-grid {
+  width: 1200px;
+  margin: 0 auto;
+  transition: 1s ease all;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.oliynyk-grid .row {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  /* margin-top: 40px; */
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.oliynyk-grid .row .card {
+  padding: 20px;
+  /* margin: 0 10px; */
+  /* margin-left: 10px; */
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25), 0px 0px 5px rgba(0, 0, 0, 0.03);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.oliynyk-grid .row .column-block {
+  width: 25%;
+  margin-bottom: 10px;
+  transition: 1s ease all;
+}
+
+.oliynyk-grid .row .column-block .card {
+  margin: 0 5px;
+}
+
+.oliynyk-grid .row .column-block:nth-child(1) .card {
+  margin-left: 10px;
+}
+.oliynyk-grid .row .column-block:nth-child(4n) .card {
+  margin-right: 10px;
+}
+
+.oliynyk-grid .row .column-block:nth-child(5n) .card {
+  margin-left: 10px;
+}
+/* END OF GRID STYLES */
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1920px) {
+  .oliynyk-grid {
+    width: 1200px;
   }
 }
+
+@media screen and (min-width: 1220px) and (max-width: 1919px) {
+  .oliynyk-grid {
+    width: 1200px;
+  }
+}
+
+@media screen and (min-width: 980px) and (max-width: 1219px) {
+  .oliynyk-grid {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 979px) {
+  .oliynyk-grid {
+    width: 720px;
+  }
+
+  .oliynyk-grid .row .column-block {
+    width: 50%;
+  }
+
+  .oliynyk-grid .row .column-block .card {
+    margin: 0 5px;
+  }
+  
+  .oliynyk-grid .row .column-block:nth-child(1) .card {
+    margin-left: 10px;
+  }
+
+  .oliynyk-grid .row .column-block:nth-child(even) .card {
+    margin-right: 10px;
+  }
+  
+  .oliynyk-grid .row .column-block:nth-child(odd) .card {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 739px) {
+  .oliynyk-grid {
+    width: 480px;
+  }
+
+  .oliynyk-grid .row .column-block {
+    width: 100%;
+  }
+
+  .oliynyk-grid .row .column-block .card {
+    margin: 0!important;
+  }
+
+  .m-tb0-lr10 {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .oliynyk-grid {
+    width: 300px;
+  }
+
+  .oliynyk-grid .row .column-block {
+    width: 100%;
+  }
+  
+  .oliynyk-grid .row .column-block .card {
+    margin: 0!important;
+  }
+
+  .m-tb0-lr10 {
+    margin: 0;
+  }
+}
+
+/* END OF MEDIA QUERIES */
